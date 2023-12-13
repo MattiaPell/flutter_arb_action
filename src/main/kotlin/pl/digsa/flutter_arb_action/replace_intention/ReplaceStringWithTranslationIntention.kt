@@ -55,7 +55,7 @@ class ReplaceStringWithTranslationIntention : PsiElementBaseIntentionAction(), I
 
         val (import, extensionName) = project.readUserDefinedParametersSettings()
         element.addImport(import)
-        val replacementReference = "$contextParameterName.$extensionName.${refactorArguments.variableWithParameters}"
+        val replacementReference = "AppLocalizations.of(context)!.${refactorArguments.variableWithParameters}"
         stringElementToReplace.replaceWithNewReference(replacementReference)
     }
 
